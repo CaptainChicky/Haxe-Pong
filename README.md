@@ -15,3 +15,9 @@ to debug
 
 
 run `haxelib install haxelib.json` to install dependencies once you are on the root of dir
+
+the two dependencies are lime and haxelib
+once you have them installed with the specidi version, run
+`haxelib run lime setup`
+`haxelib run openfl setup`
+this adds everything to path so you can compile and run the game
