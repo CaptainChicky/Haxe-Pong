@@ -12,3 +12,6 @@ in terminal
 `openfl build html5 -release`
 to debug
 `openfl test html5 -debug`
+
+
+run haxelib install to install dependencies once you are on the root of dir
