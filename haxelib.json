@@ -1,0 +1,13 @@
+{
+    "name": "Haxe-Pong",
+    "version": "1.0.0",
+    "license": "MIT",
+    "releasenote": "Initial release",
+    "contributors": [
+        "CaptainChicky"
+    ],
+    "dependencies": {
+        "lime": "8.0.2",
+        "openfl": "9.2.2"
+    }
+}
