@@ -1,5 +1,6 @@
 # Haxe-Pong
 Pong written in Haxe
+i need to get icon stuff to work
 
 to compile to windows
 in terminal
