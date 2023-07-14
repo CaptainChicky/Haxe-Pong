@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta title="Pong" package="me.theaviary.Pong" version="1.0.0" company="CCP" />
+	
+	<!-- Added app configuration -->
+	<app main="Main" path="Export" file="Pong"></app>
+	
+	<icon path="./Assets/paddle.ico"></icon>
+
+	<source path="Source" />
+	
+	<haxelib name="openfl" />
+	
+	<assets path="Assets"></assets>
+	
+	<windows fps="60" autoSize="true" />
+</project>
