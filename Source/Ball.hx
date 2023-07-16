@@ -7,9 +7,7 @@ class Ball extends Sprite {
 		super();
 
 		this.graphics.beginFill(0xFFFFFF);
-
 		this.graphics.drawCircle(0, 0, 10);
-
 		this.graphics.endFill();
 	}
 }
