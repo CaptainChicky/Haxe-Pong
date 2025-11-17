@@ -1,25 +1,11 @@
 # Haxe-Pong
 Pong written in Haxe. Haxe pong. Pong.
 
-This repo is still an unpolished to-do. Also it is my first haxe project, so noobish code. I will finish it once I have time and enough motivation.
+This is my first haxe project, so noobish code. Please dont judge.
 
-If anyone is willing to help, they are welcome to open a pull request or an issue 🙏
+Main issues were resizing issues (text got blurry, was not responsive to resize) and the text being stupid on the windows version (it was like times new roman or something).
 
-# To-Do
-Figure out how to set icons correctly.  
-According to https://community.openfl.org/t/how-to-add-icon-to-compiled-project/13743/3 all you're supposed to do is to add `<icon path="assets/paddle.png"/>` to the xml file (with the assets path configured to be assets of course), but this did not work and instead just has the default icon still in the compiled html with `<link rel="shortcut icon" type="image/png" href="./favicon.png">` instead of my intended icon.
-
-I'm using the build command `openfl build <platform> -release -clean` to build, so possibly this may have something to do with it????  
-Or, I'm just not configuring my `project.xml` correctly.
-
-<br><br>
-
-Next, with the way I set up code up
-
-    stageWidth = Lib.current.stage.stageWidth;
-	stageHeight = Lib.current.stage.stageHeight;
-    
-and with all class objects relative to one another based on these relative width and heights, there shouldn't be any problems. However, if you compile into html5, and then zoom the window out beyond 70% (ie, <60%), the window breaks and some objects are hidden from view from an invisible border the same color as the stage color. I don't know why this happens, so perhaps figure this out later???
+I finally got proper window resizing to work for the windows version, but you have to refresh the html5 version the resize/zoom thing to work.
 
 # How to build
 To debug, run

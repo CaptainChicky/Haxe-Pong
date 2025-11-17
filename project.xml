@@ -13,5 +13,11 @@
 
 	<assets path="Assets" rename="assets" />
 
-	<windows fps="60" autoSize="true" />
+	<windows fps="60" resizable="true" />
+
+	<!-- HTML5 settings for better quality -->
+	<window fps="60" />
+	<window allow-shaders="true" require-shaders="false" if="html5" />
+	<window hardware="true" allow-high-dpi="true" if="html5" />
+
 </project>

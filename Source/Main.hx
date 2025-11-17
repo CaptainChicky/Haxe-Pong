@@ -70,7 +70,7 @@ class Main extends Sprite {
 		ball.y = stageHeight / 2 - ball.height / 2;
 		this.addChild(ball);
 
-		var scoreFormat:TextFormat = new TextFormat("Verdana", 24, 0xbbbbbb, true);
+		var scoreFormat:TextFormat = new TextFormat("_sans", 24, 0xbbbbbb, true);
 		scoreFormat.align = TextFormatAlign.CENTER;
 		scoreField = new TextField();
 		addChild(scoreField);
@@ -78,8 +78,11 @@ class Main extends Sprite {
 		scoreField.y = 30;
 		scoreField.defaultTextFormat = scoreFormat;
 		scoreField.selectable = false;
+		#if html5
+		scoreField.embedFonts = false;
+		#end
 
-		var messageFormat:TextFormat = new TextFormat("Verdana", 18, 0xbbbbbb, true);
+		var messageFormat:TextFormat = new TextFormat("_sans", 18, 0xbbbbbb, true);
 		messageFormat.align = TextFormatAlign.CENTER;
 		messageField = new TextField();
 		addChild(messageField);
@@ -87,6 +90,9 @@ class Main extends Sprite {
 		messageField.y = stageHeight - 50;
 		messageField.defaultTextFormat = messageFormat;
 		messageField.selectable = false;
+		#if html5
+		messageField.embedFonts = false;
+		#end
 		messageField.text = "Press SPACE to start\nUse ARROW KEYS to move your platform";
 
 		scorePlayer = 0;
@@ -111,6 +117,36 @@ class Main extends Sprite {
 	function resize(e:Event):Void {
 		if (!inited) {
 			init();
+		} else {
+			// Handle window resize after initialization
+			var oldStageWidth:Int = stageWidth;
+			var oldStageHeight:Int = stageHeight;
+
+			stageWidth = Lib.current.stage.stageWidth;
+			stageHeight = Lib.current.stage.stageHeight;
+
+			// Only resize if dimensions actually changed
+			if (oldStageWidth != stageWidth || oldStageHeight != stageHeight) {
+				// Update platform positions
+				platform2.x = stageWidth - platform2.width - 5;
+
+				// Recenter platforms vertically if needed
+				if (currentGameState == Paused) {
+					platform1.y = stageHeight / 2 - platform1.height / 2;
+					platform2.y = stageHeight / 2 - platform2.height / 2;
+				}
+
+				// Update ball position
+				if (currentGameState == Paused) {
+					ball.x = stageWidth / 2 - ball.width / 2;
+					ball.y = stageHeight / 2 - ball.height / 2;
+				}
+
+				// Update text field widths and positions
+				scoreField.width = stageWidth;
+				messageField.width = stageWidth;
+				messageField.y = stageHeight - 50;
+			}
 		}
 	}
 
@@ -265,3 +301,4 @@ class Main extends Sprite {
 		Lib.current.addChild(new Main());
 	}
 }
+
