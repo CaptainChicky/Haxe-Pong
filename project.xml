@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta title="Pong" package="me.theaviary.Pong" version="1.0.0" company="CCP" />
+
+	<!-- Added app configuration -->
+	<app main="Main" path="Export" file="Pong"></app>
+
+	<icon path="assets/paddle.png"/>
+
+	<source path="Source" />
+
+	<haxelib name="openfl" />
+
+	<assets path="Assets" rename="assets" />
+
+	<windows fps="60" resizable="true" />
+
+	<!-- HTML5 settings for better quality -->
+	<window fps="60" />
+	<window allow-shaders="true" require-shaders="false" if="html5" />
+	<window hardware="true" allow-high-dpi="true" if="html5" />
+
+</project>
